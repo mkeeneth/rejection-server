@@ -30,7 +30,7 @@ passportInit();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // log
-// create a write stream (in append mode)
+// create a write stream (in append mode) not for prod/heroku
 var accessLogStream = fs.createWriteStream(
   path.join(__dirname, "log", "access.log"),
   {
@@ -39,7 +39,11 @@ var accessLogStream = fs.createWriteStream(
 );
 
 // setup the logger
-app.use(morgan("combined", { stream: accessLogStream }));
+if process.env.NODE_ENV === "production") {
+  app.use(morgan("combined"));
+} else {
+  app.use(morgan("combined", { stream: accessLogStream }));
+}
 
 // Accept requests from our client
 app.use(
