@@ -39,10 +39,8 @@ var accessLogStream = fs.createWriteStream(
 );
 
 // setup the logger
-if (process.env.NODE_ENV === "production") {
-  app.use(morgan("combined"));
-} else {
-  app.use(morgan("combined", { stream: accessLogStream }));
+if (process.env.NODE_ENV != "production") {
+   app.use(morgan("combined", { stream: accessLogStream }));
 }
 
 // Accept requests from our client
