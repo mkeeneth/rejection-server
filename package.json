@@ -1,0 +1,38 @@
+{
+  "name": "rejection-server",
+  "version": "0.0.1",
+  "description": "Server api for the rejection game app",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7",
+    "pg": "^7.6.1",
+    "request": "^2.86.0",
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.1.1"
+  },
+  "author": "mkeeneth",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "1.18.0"
+  },
+  "engines": {
+    "node": "10.12.0",
+    "npm": "6.4.1"
+  }
+}

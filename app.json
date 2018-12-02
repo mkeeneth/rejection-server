@@ -1,0 +1,6 @@
+{
+  "name": "hello-heroku",
+  "scripts": {
+    "postdeploy": "psql $DATABASE_URL -f setup.sql"
+  }
+}
