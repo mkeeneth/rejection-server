@@ -29,6 +29,7 @@
   "author": "mkeeneth",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^5.9.0",
     "nodemon": "1.18.0"
   },
   "engines": {
