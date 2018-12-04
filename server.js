@@ -68,6 +68,13 @@ app.set("io", io);
 // wake Heroku instance
 app.get("/wake-up", (req, res) => res.send("👍"));
 
+// close auth pop up in case the browser can't
+app.get("/after-auth.html", (req, res) =>
+  res.send(
+    "<html><body><h3>Auth completed, you may close this window.</h3><script type='text/javascript'>window.close();</script></body></htm;>"
+  )
+);
+
 // Direct all other requests to auth router
 app.use("/", authRouter);
 
